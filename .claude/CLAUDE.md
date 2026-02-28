@@ -43,6 +43,8 @@ When the user asks to build without specifying a target, ask which type they wan
 - **Office Add-in** — Office.js zip for Excel Online + Desktop
 - **Office Add-in (dev)** — same but pointed at a local dev server
 
+If the user's request implies running or testing the add-in locally (e.g. "run locally", "export for dev", "export this", "try it out", "test it in Excel"), default to **Office Add-in (dev)** without asking.
+
 Before running any build command, read `xllify.json` to pre-fill known values (`name`, `namespace`, `base_url`). If required values are missing from `xllify.json`, ask for them all in a single message, then write them into `xllify.json` before proceeding.
 
 Required values per build type:
@@ -79,7 +81,14 @@ xllify.json          # add-in config (name, namespace, base_url, app_id, ...)
 ## After building
 
 - **XLL**: Tell the user to copy the `.xll` file to a Windows machine, then visit https://xllify.com/xll-need-to-know for next steps.
-- **Office Add-in** / **Office Add-in (dev)**: No special instructions needed.
+- **Office Add-in**: Build and leave the `.zip` in `builds/`. Remind the user that the contents need to be hosted at the `base_url` specified in `xllify.json`.
+- **Office Add-in (dev)**: Before building, check if `package.json` exists in the repo root. If it does, tell the user the add-in is already set up and skip the build entirely. If it does not exist, run the build, then unzip the `.zip` into a temp directory and copy the following into the repo root (skip any item that already exists):
+  - `office-addin/` directory → repo root
+  - `package.json` → repo root
+  - `scripts/` directory → repo root
+  - `README.md` from the archive → repo root as `ADDIN.md`
+
+  Do not overwrite existing files.
 
 ## Rules
 
