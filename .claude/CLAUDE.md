@@ -70,10 +70,8 @@ xllify build officejs --title "<name>" --namespace <ns> --dev-url <url> -o build
 ```
 functions/           # .luau source files
 tests/               # _test.luau test files
-office-addin/
-  manifest.xml       # generated — do not edit by hand, use npm run generate-manifest
-  public/            # served to Excel
-xll/                 # XLL build output placeholder
+work/                # staging area for new functions before saving (create if missing)
+builds/              # build output (create if missing)
 xllify.json          # add-in config (name, namespace, base_url, app_id, ...)
 .env                 # XLLIFY_API_KEY=your_key_here  (never commit this)
 ```
