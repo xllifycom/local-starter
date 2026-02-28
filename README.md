@@ -19,6 +19,25 @@ This repo is for developers who prefer to work in Claude Code: you get the same 
 3. Copy `.env.example` to `.env` and set `XLLIFY_DEV_KEY` to your key from [xllify.com](https://xllify.com)
 4. Open in Claude Code
 
+## Building
+
+```bash
+make xll        # builds/xllify.xll  (Windows desktop Excel)
+make officejs   # builds/xllify.zip  (Office Add-in)
+make dev        # builds/xllify-dev.zip (Office Add-in, pointed at localhost:3000)
+make clean      # remove all build outputs
+```
+
+Values are read from `xllify.json`. Override on the command line if needed:
+
+```bash
+make officejs BASE_URL=https://myserver.com
+```
+
+Targets are file-based — Make skips rebuilds when nothing in `functions/` has changed.
+
+---
+
 ## Usage
 
 Just describe what you want in Claude Code:
