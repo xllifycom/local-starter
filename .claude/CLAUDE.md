@@ -43,7 +43,11 @@ When the user asks to build without specifying a target, ask which type they wan
 - **Office Add-in** — Office.js zip for Excel Online + Desktop
 - **Office Add-in (dev)** — same but pointed at a local dev server
 
-If the user's request implies running or testing the add-in locally (e.g. "run locally", "export for dev", "export this", "try it out", "test it in Excel"), default to **Office Add-in (dev)** without asking.
+If the user's request implies running or testing the add-in locally (e.g. "run locally", "run the add-in locally", "export for dev", "export this", "try it out", "test it in Excel"), ask whether they want:
+- **Office Add-in (dev)** — runs the add-in locally as an Office.js add-in (Excel Online + Desktop via a local dev server)
+- **XLL** — builds a standalone `.xll` file for Windows desktop Excel
+
+If they choose Office Add-in, proceed with **Office Add-in (dev)** using the existing flow. If they choose XLL, proceed with the **XLL** build — the user can load the resulting `.xll` directly from `builds/` in Excel on Windows.
 
 Before running any build command, read `xllify.json` to pre-fill known values (`name`, `namespace`, `base_url`). If required values are missing from `xllify.json`, ask for them all in a single message, then write them into `xllify.json` before proceeding.
 

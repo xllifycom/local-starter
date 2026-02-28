@@ -57,6 +57,16 @@ Simply describe what you want in Claude Code:
 
 > "Build me an XLL"
 
+> "Build me a production Office Add-in"
+
+> "Set up local dev so I can test this as an Office Add-in in Excel Online"
+
+> "Run the add-in locally"
+
+> "Add tests for the compound interest function"
+
+> "What functions do I have registered?"
+
 Claude Code will use the xllify CLI to generate code and produce deployable add-ins.
 
 ### Building
@@ -66,7 +76,7 @@ The direct commands to run build-related activities are as follows.
 ```bash
 make xll        # builds/xllify.xll  (Windows desktop Excel)
 make officejs   # builds/xllify.zip  (Office Add-in)
-make dev        # builds/xllify-dev.zip (Office Add-in, pointed at localhost:3000)
+make dev        # add local dev support for Office Add-ins (requires node)
 make clean      # remove all build outputs
 ```
 
