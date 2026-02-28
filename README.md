@@ -23,24 +23,10 @@ This repo is for developers who prefer to work in Claude Code: you get the same 
    ```
 2. Clone this repo (or use **Use this template** on GitHub)
 3. Copy `.env.example` to `.env` and set `XLLIFY_DEV_KEY` to your key from [xllify.com](https://xllify.com)
-4. Open in Claude Code
+4. Run `$ make new-project` on Mac/Linux or new-project.ps1 on Windows
+5. Open the repo in Claude Code or your editor of choice (Visual Studio Code recommended)
 
 ## Usage
-
-```bash
-$ claude
-> "Create a function that calculates compound interest"
-```
-
-Just describe what you want in Claude Code:
-
-> "Create a function that calculates compound interest"
-
-> "Add a function that strips HTML tags from a cell"
-
-> "Build an XLL from all my functions"
-
-Claude Code will use the xllify CLI to generate code and produce deployable add-ins.
 
 ### Starting a new project
 
@@ -56,7 +42,26 @@ make new-project
 
 This overwrites the `app_id` field in `xllify.json` with a new UUID. Commit the result.
 
+### Usage from Claude Code
+
+```bash
+$ claude
+> "Create a function that calculates compound interest"
+```
+
+Simply describe what you want in Claude Code:
+
+> "Create a function that calculates compound interest"
+
+> "Add a function that strips HTML tags from a cell"
+
+> "Build me an XLL"
+
+Claude Code will use the xllify CLI to generate code and produce deployable add-ins.
+
 ### Building
+
+The direct commands to run build-related activities are as follows.
 
 ```bash
 make xll        # builds/xllify.xll  (Windows desktop Excel)
@@ -65,7 +70,7 @@ make dev        # builds/xllify-dev.zip (Office Add-in, pointed at localhost:300
 make clean      # remove all build outputs
 ```
 
-Values are read from `xllify.json`. Override on the command line if needed:
+Config values are read from `xllify.json`. Override on the command line if needed:
 
 ```bash
 make officejs BASE_URL=https://myserver.com
@@ -80,7 +85,6 @@ functions/      # Your .luau function files
 tests/          # Test files (_test.luau)
 .claude/        # Claude Code config and instructions
 ```
-
 ---
 
 ## CLI Reference
