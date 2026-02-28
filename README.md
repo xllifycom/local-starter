@@ -23,7 +23,7 @@ This repo is for developers who prefer to work in Claude Code: you get the same 
    ```
 2. Clone this repo (or use **Use this template** on GitHub)
 3. Copy `.env.example` to `.env` and set `XLLIFY_DEV_KEY` to your key from [xllify.com](https://xllify.com)
-4. Run `$ make new-project` on Mac/Linux or new-project.ps1 on Windows
+4. Run `$ make new-project` on Mac/Linux or `new-project.ps1` on Windows
 5. Open the repo in Claude Code or your editor of choice (Visual Studio Code recommended)
 
 ## Usage
