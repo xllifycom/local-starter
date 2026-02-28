@@ -4,11 +4,11 @@ This project contains custom Excel functions. Functions live as `.luau` files in
 
 ## Working with functions
 
-**To create a new function**, run `xllify suggest "<description>"` redirecting stdout to `work/`:
+**To create a new function**, run `xllify suggest "<description>"` redirecting stdout to `work/` and stderr to a separate file:
 ```
-xllify suggest "<description>" > work/<suggested-name>.luau
+xllify suggest "<description>" > work/<suggested-name>.luau 2>work/<suggested-name>.stderr
 ```
-The CLI prints the Luau code to stdout and a summary to stderr. After running, read `work/<name>.luau` and present the output nicely: show the summary from stderr, examples, and the code in a fenced luau code block. Then offer to test it by calling `xllify-lua --load work/<name>.luau call <FUNCNAME> <args...>` using one of the example inputs. If the user likes it and asks to save, move it to `functions/<name>.luau`.
+The CLI prints the Luau code to stdout and a summary to stderr. **Always redirect them separately** — combining them (e.g. `2>&1`) breaks the output. After running, read both files and present the output nicely: show the summary from the `.stderr` file, examples, and the code in a fenced luau code block. Then offer to test it by calling `xllify-lua --load work/<name>.luau call <FUNCNAME> <args...>` using one of the example inputs. If the user likes it and asks to save, move it to `functions/<name>.luau`.
 
 Never write or edit Luau function code directly. Always go through `xllify suggest` so generation is handled correctly.
 
@@ -75,7 +75,7 @@ tests/               # _test.luau test files
 work/                # staging area for new functions before saving (create if missing)
 builds/              # build output (create if missing)
 xllify.json          # add-in config (name, namespace, base_url, app_id, ...)
-.env                 # XLLIFY_API_KEY=your_key_here  (never commit this)
+.env                 # XLLIFY_DEV_KEY=your_key_here  (never commit this)
 ```
 
 ## After building
@@ -93,9 +93,18 @@ xllify.json          # add-in config (name, namespace, base_url, app_id, ...)
 ## Rules
 
 - Never commit `.env`
+- If `.env` does not exist, create it with `XLLIFY_DEV_KEY=` and tell the user:
+  1. Visit https://xllify.com/web#userinfo to generate an API key
+  2. They can either paste it here (pasting it here is safe — Claude Code runs locally and your input never leaves your machine) or add it to `.env` themselves as `XLLIFY_DEV_KEY=<their-key>`
+- Before running any `xllify` or `xllify-lua` command, run it directly — the CLI reads `.env` automatically. Only if it fails due to a missing key, check `.env` exists and `XLLIFY_DEV_KEY` is set. If missing or empty, follow the `.env` setup rule above before proceeding.
 - Before running any `xllify` or `xllify-lua` command, check it's available with `which xllify-lua`. If not found, ask the user if they'd like to install it, then run the appropriate installer:
   - **macOS/Linux**: `curl -fsSL https://xllify.com/install.sh | bash`
   - **Windows**: `irm https://xllify.com/install.ps1 | iex`
 - When the user asks to run `npm run start` (or `npm start`), first run `which xllify-lua`. If not found, run `npm run install-xllify` before proceeding.
+- After setting up the dev add-in for the first time (copying files from the zip), tell the user to run:
+  1. `npm install`
+  2. `npm run certs` (first run only — installs localhost HTTPS certificates)
+  3. `npm run install-xllify` only if `which xllify-lua` returns nothing
+  4. `npm start`
 - If asked how to write or modify a function, always use `xllify suggest` rather than answering directly — the CLI handles generation correctly
 - If a build fails, show the error verbatim — don't attempt to fix Luau syntax manually
