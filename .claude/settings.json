@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xllify build*)",
+      "Bash(xllify-lua*)",
+      "Bash(xllify suggest*)",
+      "Bash(mv work/* functions/*)",
+      "Read(work/*)",
+      "Read(functions/*)",
+      "Read(tests/*)",
+      "Write(work/*)",
+      "Write(functions/*)",
+      "Write(tests/*)"
+    ]
+  }
+}

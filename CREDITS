@@ -1,0 +1,129 @@
+XLLIFY - THIRD PARTY SOFTWARE CREDITS
+======================================
+
+This distribution includes binary libraries and headers from the following
+third-party software projects. All dependencies are distributed in binary form
+only. Users of this distribution must comply with the respective licenses.
+
+-------------------------------------------------------------------------------
+
+1. LUAU
+   Description: Lua language implementation with gradual typing
+   Copyright: (c) 2019-2025 Roblox Corporation
+              (c) 1994-2019 Lua.org, PUC-Rio
+   License: MIT License
+   Website: https://luau-lang.org/
+
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+
+-------------------------------------------------------------------------------
+
+2. SPDLOG
+   Description: Fast C++ logging library
+   Copyright: (c) 2016 Gabi Melman
+   License: MIT License
+   Website: https://github.com/gabime/spdlog
+
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+
+   NOTE: spdlog depends on the fmt library (MIT License).
+   Users must comply with its license: https://github.com/fmtlib/fmt/blob/master/LICENSE.rst
+
+-------------------------------------------------------------------------------
+
+3. JSON FOR MODERN C++ (nlohmann/json)
+   Description: JSON library for Modern C++
+   Copyright: (c) 2013-2023 Niels Lohmann
+   License: MIT License
+   SPDX-License-Identifier: MIT
+   Website: https://github.com/nlohmann/json
+
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+
+-------------------------------------------------------------------------------
+
+4. ZEROMQ (libzmq)
+   Description: High-performance asynchronous messaging library
+   Copyright: (c) 2007-2025 iMatix Corporation and Contributors
+   License: Mozilla Public License Version 2.0 (MPL-2.0)
+   Website: https://zeromq.org/
+
+   This Source Code Form is subject to the terms of the Mozilla Public
+   License, v. 2.0. If a copy of the MPL was not distributed with this
+   file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+   Full license text: https://github.com/zeromq/libzmq/blob/master/LICENSE
+
+-------------------------------------------------------------------------------
+
+5. MICROSOFT EXCEL SDK
+   Description: Excel XLL SDK headers and libraries
+   Copyright: Microsoft Corporation
+   License: Proprietary (Microsoft)
+   Website: https://www.microsoft.com/en-gb/download/details.aspx?id=35567
+   Note: Distributed for use with Microsoft Excel add-in development only.
+         Users must comply with Microsoft Excel SDK license terms.
+
+-------------------------------------------------------------------------------
+
+DISTRIBUTION NOTICE
+-------------------
+
+The libraries listed above are used to build the xllify tool. No third-party
+libraries are included in this distribution - only the compiled xllify binary.
+
+Users of this distribution must:
+1. Comply with all third-party licenses listed above
+2. Include appropriate copyright notices in their derivative works
+3. Not remove or modify any copyright notices or license files
+
+For questions about licensing, please refer to the original project websites
+listed above.

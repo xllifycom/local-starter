@@ -1,0 +1,7 @@
+.env
+.suggest/
+.claude/settings.local.json
+*.xll
+*.zip
+work
+.DS_Store
