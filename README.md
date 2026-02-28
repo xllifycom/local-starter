@@ -1,8 +1,8 @@
 # xllify Local Starter
 
-[xllify](https://xllify.com) lets you build custom Excel functions in plain language — no C++ or VBA required. You describe what you want, and it generates the function code and packages it as a native Excel add-in (.xll for Windows desktop, or an Office.js add-in for Excel Online).
+[xllify](https://xllify.com) lets you build custom Excel functions in plain language: no C++ or VBA required. You describe what you want, and it generates the function code and packages it as a native Excel add-in (.xll for Windows desktop, or an Office.js add-in for Excel Online).
 
-This repo is for developers who prefer to work in Claude Code: you get the same AI-powered function generation and build pipeline, but driven from your editor with your functions stored in version control. You can of course write your function code by hand.
+This repo is for developers who prefer to work locally in VS Code, perhaps with Claude Code. You get the same AI-powered function generation and build pipeline, but driven from your editor with your functions stored in version control. You can of course write your function code by hand.
 
 ## Setup
 
@@ -22,7 +22,7 @@ This repo is for developers who prefer to work in Claude Code: you get the same 
    irm https://xllify.com/install.ps1 | iex
    ```
 2. Clone this repo (or use **Use this template** on GitHub)
-3. Copy `.env.example` to `.env` and set `XLLIFY_DEV_KEY` to your key from [xllify.com](https://xllify.com)
+3. Copy `.env.example` to `.env` and set `XLLIFY_DEV_KEY` to your key from [xllify.com](https://xllify.com/web#userinfo)
 4. Run `$ make new-project` on Mac/Linux or `new-project.ps1` on Windows
 5. Open the repo in Claude Code or your editor of choice (Visual Studio Code recommended)
 
