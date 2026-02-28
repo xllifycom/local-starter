@@ -42,6 +42,20 @@ Just describe what you want in Claude Code:
 
 Claude Code will use the xllify CLI to generate code and produce deployable add-ins.
 
+### Starting a new project
+
+When forking or reusing this template, generate a fresh `app_id` UUID in `xllify.json`:
+
+```bash
+# macOS / Linux
+make new-project
+
+# Windows (PowerShell)
+.\new-project.ps1
+```
+
+This overwrites the `app_id` field in `xllify.json` with a new UUID. Commit the result.
+
 ### Building
 
 ```bash
