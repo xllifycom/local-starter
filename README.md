@@ -70,6 +70,20 @@ make dev        # builds/xllify-dev.zip (Office Add-in, pointed at localhost:300
 make clean      # remove all build outputs
 ```
 
+#### Running the Office Add-in locally (dev mode only)
+
+The first time you build a dev add-in (or ask Claude Code to set one up), the build output is unpacked and scaffold files are copied into the repo root. Once that's done:
+
+```bash
+npm install
+npm run certs      # first run only — installs localhost HTTPS certificates
+npm start
+```
+
+If `xllify-lua` is not on your PATH, run `npm run install-xllify` before `npm start`.
+
+> This local dev workflow applies to **Office Add-ins only**. XLL add-ins are standalone `.xll` files and do not require a local server.
+
 Config values are read from `xllify.json`. Override on the command line if needed:
 
 ```bash
@@ -83,6 +97,8 @@ Targets are file-based — Make skips rebuilds when nothing in `functions/` has 
 ```
 functions/      # Your .luau function files
 tests/          # Test files (_test.luau)
+work/           # Staging area for new functions before saving
+builds/         # Build output (.xll, .zip)
 .claude/        # Claude Code config and instructions
 ```
 ---
