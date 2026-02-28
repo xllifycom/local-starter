@@ -7,6 +7,12 @@ This repo is for developers who prefer to work in Claude Code: you get the same 
 ## Setup
 
 1. Install the xllify CLI:
+
+   The CLI tools (`xllify` and `xllify-lua`) are available for:
+   - **macOS** — Apple Silicon (arm64)
+   - **Windows** — x86-64
+   - **Linux** — amd64
+
    ```bash
    # macOS / Linux as non-root user
    # you can inspect install.sh with curl https://xllify.com/install.sh i
@@ -19,7 +25,24 @@ This repo is for developers who prefer to work in Claude Code: you get the same 
 3. Copy `.env.example` to `.env` and set `XLLIFY_DEV_KEY` to your key from [xllify.com](https://xllify.com)
 4. Open in Claude Code
 
-## Building
+## Usage
+
+```bash
+$ claude
+> "Create a function that calculates compound interest"
+```
+
+Just describe what you want in Claude Code:
+
+> "Create a function that calculates compound interest"
+
+> "Add a function that strips HTML tags from a cell"
+
+> "Build an XLL from all my functions"
+
+Claude Code will use the xllify CLI to generate code and produce deployable add-ins.
+
+### Building
 
 ```bash
 make xll        # builds/xllify.xll  (Windows desktop Excel)
@@ -35,20 +58,6 @@ make officejs BASE_URL=https://myserver.com
 ```
 
 Targets are file-based — Make skips rebuilds when nothing in `functions/` has changed.
-
----
-
-## Usage
-
-Just describe what you want in Claude Code:
-
-> "Create a function that calculates compound interest"
-
-> "Add a function that strips HTML tags from a cell"
-
-> "Build an XLL from all my functions"
-
-Claude Code will use the xllify CLI to generate code and produce deployable add-ins.
 
 ## Structure
 
